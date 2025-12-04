@@ -64,15 +64,25 @@ El mapa de la ciudad se genera a partir de una imagen real:
 ## Arquitectura del Sistema
 
 Dataset (25 nodos)
+
 ↓
+
 Graph Builder (NetworkX)
+
 ↓
+
 Centrality Ordering
+
 ↓
+
 Branch & Bound Core
+
 ↓
+
 Evaluator (coverage, score, avg-time)
+
 ↓
+
 Visualizer (mapa real con estaciones + círculos proporcionales)
 
 
