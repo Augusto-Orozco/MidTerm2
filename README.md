@@ -107,11 +107,14 @@ Para N=25 nodos y K=3, Branch & Bound puede explorar ~200–300 combinaciones.
 Archivo `.txt` con:
 
 N K RADIUS
+
 [población] [critical]
+
 M
-u v w
+
 u v w
 
+u v w
 
 ---
 
