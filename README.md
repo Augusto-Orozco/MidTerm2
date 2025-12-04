@@ -109,14 +109,14 @@ u v w
 
 El sistema genera:
 
-✔ un mapa urbano basado en contorno real  
-✔ colores por tipo de nodo  
-✔ estaciones optimizadas  
-✔ círculos de cobertura **proporcionales al tamaño del mapa**
+- un mapa urbano basado en contorno real  
+- colores por tipo de nodo  
+- estaciones optimizadas  
+- círculos de cobertura **proporcionales al tamaño del mapa**
 
 ---
 
-## 🔧 Requisitos Técnicos
+## Requisitos Técnicos
 
 - Python 3  
 - NetworkX  
