@@ -19,7 +19,7 @@ ys, xs = np.where(mask)
 H, W = img_gray.shape
 
 # Parameters
-N = 20   #Aqui se cambia para mas o menos nodos, con mas de 30 empieza a tardar mucho.
+N = 50   #Aqui se cambia para mas o menos nodos, con mas de 30 empieza a tardar mucho.
 K = 5
 RADIUS = 15.0
 
