@@ -1,24 +1,24 @@
 # Fire Station Deployment Optimization  
-**MidTerm Project – AI Search & Optimization**
+**Proyecto MidTerm – Búsqueda y Optimización con IA**
 
-This project models and solves the _Fire Station Deployment Problem_ using graph-based optimization, heuristics, and Branch & Bound techniques.  
-A synthetic city is generated from a real geographic contour image, producing a population-weighted graph where each node represents an urban zone.
+Este proyecto modela y resuelve el _Problema de Despliegue de Estaciones de Bomberos_ utilizando optimización basada en grafos, heurísticas y técnicas de Branch & Bound.  
+Se genera una ciudad sintética a partir del contorno geográfico real de una imagen, produciendo un grafo ponderado por población donde cada nodo representa una zona urbana.
 
-The goal is to find the optimal placement of **K fire stations** that maximizes coverage while minimizing emergency response time.
+El objetivo es encontrar la ubicación óptima de **K estaciones de bomberos** que maximice la cobertura mientras minimiza el tiempo de respuesta ante emergencias.
 
 ---
 
-## **1. Features**
+## **1. Características**
 
-### Image-Based City Generation
-- Loads a city outline image (`image.png`)
-- Samples points only inside the contour
-- Generates:
-  - Node positions
-  - Population per node
-  - Critical nodes (high priority)
-  - Graph connectivity (nearest-neighbor roads)
+### Generación de Ciudad Basada en Imagen
+- Carga una imagen del contorno de la ciudad (`image.png`)
+- Muestra puntos únicamente dentro del contorno
+- Genera:
+  - Posiciones de los nodos
+  - Población por nodo
+  - Nodos críticos (alta prioridad)
+  - Conectividad del grafo (carreteras mediante vecinos más cercanos)
 
-### Optimization Engine
-- **Dijkstra-based evaluation** (response time per node)
-- **Scoring function**:
+### Motor de Optimización
+- **Evaluación basada en Dijkstra** (tiempo de respuesta por nodo)
+- **Función de puntuación**:
