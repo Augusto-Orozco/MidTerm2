@@ -122,7 +122,8 @@ El sistema genera:
 - Python 3  
 - NetworkX  
 - Matplotlib  
-- NumPy  
+- NumPy
+- Psutil
 
 ---
 
