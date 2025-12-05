@@ -10,9 +10,7 @@ import os
 from functools import lru_cache
 import math
 
-# =========================
 # 1. LECTURA DE DATOS
-# =========================
 def read_city_dataset(path):
     if not os.path.exists(path):
         # Generación de datos sintéticos
@@ -56,10 +54,7 @@ def read_city_dataset(path):
 
     return N, K, RADIUS, population, critical, edges
 
-# =========================
 # 2. MOTORES DE CÁLCULO
-# =========================
-
 @lru_cache(maxsize=None)
 def dijkstra_cached(G_data, source):
     G = nx.Graph()
@@ -93,9 +88,7 @@ def evaluate_config_fast(shortest_paths, stations, population, RADIUS):
     score = coverage * 1000 - avg_time
     return score, coverage, avg_time
 
-# =========================
-# 3. BRANCH & BOUND (WORKER)
-# =========================
+# 3. BRANCH & BOUND
 def BnB_global(args):
     start_idx, chosen, ordered_nodes, K, shortest_paths, population, RADIUS, best_score_global = args
     
@@ -182,10 +175,7 @@ def branch_and_bound_parallel_fixed(G, N, K, population, critical, RADIUS, order
 
     return best_score, best_combo, total_checked, total_pruned, shortest_paths
 
-# =========================
 # 4. VISUALIZACIÓN
-# =========================
-
 def map_from_contour_realistic(G, image_path, threshold=0.7, seed=42):
     random.seed(seed)
     np.random.seed(seed)
@@ -259,10 +249,7 @@ def plot_poster_graphs(G, pos, critical, stations, image_path=None):
     plt.savefig("poster_final_map.png", dpi=300, bbox_inches='tight')
     plt.close()
 
-# =========================
 # 5. MÓDULO DE BENCHMARKING (A, B, 2A)
-# =========================
-
 def run_all_benchmarks(G, N, population, critical, RADIUS, ordered_nodes, best_score_bnb, best_stations_bnb, time_bnb):
     print("\n" + "="*40)
     print("   EJECUTANDO BENCHMARKS PAR EL PÓSTER")
@@ -369,9 +356,7 @@ def run_all_benchmarks(G, N, population, critical, RADIUS, ordered_nodes, best_s
         
         print(f"{k_val:<5} | {total_combinations:<15} | {checked:<15} | {pruned_pct:.2f}%")
 
-# =========================
 # 6. MAIN
-# =========================
 if __name__ == "__main__":
     DATASET = "city_dataset.txt" 
     IMAGE = "mapa1.png"
@@ -391,7 +376,6 @@ if __name__ == "__main__":
     TOP_LIMIT = 50 if N > 100 else N
     ordered_nodes = sorted(G.nodes(), key=lambda n: -cent_score[n])[:TOP_LIMIT]
 
-    # --- EJECUCIÓN PRINCIPAL ---
     t0 = time.time()
     best_score, best_stations, checked, pruned, _ = branch_and_bound_parallel_fixed(
         G, N, K, population, critical, RADIUS, ordered_nodes
@@ -399,7 +383,6 @@ if __name__ == "__main__":
     t1 = time.time()
     main_time = t1 - t0
 
-    print(f"\n✅ RESULTADO PRINCIPAL:")
     print(f"   Estaciones Óptimas: {best_stations}")
     print(f"   Score: {best_score:.2f}")
 
